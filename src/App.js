@@ -7,19 +7,19 @@ const App = () => {
       {
         id: "1",
         name: "car",
-        date: new Date(2021, 12, 30),
+        date: new Date(2019, 12, 30),
         amount: 245,
       },
       {
         id: "2",
         name: "bus",
-        date: new Date(2021, 12, 14),
+        date: new Date(2020, 12, 14),
         amount: 5786,
       },
       {
         id: "3",
         name: "moto",
-        date: new Date(2021, 11, 30),
+        date: new Date(2020, 11, 30),
         amount: 9864,
       },
       {
@@ -36,6 +36,7 @@ const App = () => {
   return (
     <div>
       <NewExpense  onAddExpense={addExpenseHandler}/>
+      
       <Expenses expenses={expenses} />
     </div>
   );
