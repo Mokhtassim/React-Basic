@@ -5,3 +5,7 @@
   width: 50rem;
   max-width: 95%;
 }
+.not-found {
+  color: white;
+  font: 800;
+}

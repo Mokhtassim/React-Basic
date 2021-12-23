@@ -19,7 +19,16 @@ if (filterByYear !== 'all') {
     return expense.date.getFullYear().toString() === filterByYear;
   });
     }
-  
+  let contentItem = <p className='not-found'>not found data</p>;
+  if (filterItem.length > 0) {
+    contentItem = filterItem.map((filterExpense) => (
+              <ExpenseItem
+                key={filterExpense.id}
+                name={filterExpense.name}
+                date={filterExpense.date}
+                amount={filterExpense.amount}
+              />));
+  }
     return (
       <div>
         <Card className="expenses">
@@ -27,15 +36,7 @@ if (filterByYear !== 'all') {
             selectYear={filterByYear}
             onFilterHandler={onFilterHandler}
           />
-          {filterItem.map((filterExpense) => (
-              <ExpenseItem
-                key={filterExpense.id}
-                name={filterExpense.name}
-                date={filterExpense.date}
-                amount={filterExpense.amount}
-              />
-            ))
-          }
+          {contentItem}
         </Card>
       </div>
     );
