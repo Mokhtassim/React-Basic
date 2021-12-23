@@ -7,7 +7,7 @@ const ExpenseForm = (props) => {
   const [enteredName, setEnteredName] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
-
+  const [message, setMessage] = useState('');
   // const [userInput, setUserInput] = useState({
   //   enteredName:'',
   //   enteredAmount:'',
@@ -42,7 +42,12 @@ const ExpenseForm = (props) => {
   }
   const submitHandler = (event) => {
     event.preventDefault();
-
+    
+    if(enteredName === '' ){
+    setMessage(<p>please enter Name</p>);
+    }  
+    else{
+      setMessage('');
     const expenseData = {
       name : enteredName,
       amount : enteredAmount,
@@ -53,6 +58,7 @@ const ExpenseForm = (props) => {
     setEnteredName('');
     setEnteredAmount('');
     setEnteredDate('');
+    }
   }
     return (
       <form onSubmit={submitHandler}>
@@ -60,6 +66,7 @@ const ExpenseForm = (props) => {
           <div className="new-expense__control">
             <label>Name</label>
             <input type="text" value={enteredName} onChange={nameChangeHandler}/>
+            {message}
           </div>
           <div className="new-expense__control">
             <label>Amount</label>
