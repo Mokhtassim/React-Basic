@@ -19,7 +19,6 @@ if (filterByYear !== 'all') {
     return expense.date.getFullYear().toString() === filterByYear;
   });
     }
-
     return (
       <div>
         <Card className="expenses">
