@@ -25,7 +25,13 @@ const DEFAULT_EXPENSES = [
     id: "4",
     name: "PC",
     date: new Date(2021, 11, 5),
-    amount: 96584,
+    amount: 6584,
+  },
+  {
+    id: "5",
+    name: "Door",
+    date: new Date(2021, 7, 5),
+    amount: 4500,
   },
 ];
 const App = () => {
