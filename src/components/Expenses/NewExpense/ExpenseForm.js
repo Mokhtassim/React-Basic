@@ -34,11 +34,14 @@ const ExpenseForm = (props) => {
     else if(enteredName.length <3) 
     setMessage("Enter 3 caracter or more");
 
+    else if(!enteredAmount || !enteredDate) {
+      setMessage("Amount or Date is empty!!");
+    }
     else{
         setMessage("");
         const expenseData = {
           name: enteredName,
-          amount: enteredAmount,
+          amount: +enteredAmount,
           date: new Date(enteredDate),
         };
         
